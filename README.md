@@ -105,12 +105,6 @@ Generated report: DTVP-3 section.
 
 These are excerpts from a private codebase. They are not runnable on their own.
 
-## What I would do differently
-
-- Write automated tests from the start, at least for each scoring module.
-- Check authorization in one middleware instead of in each controller.
-- Use a single UI library. The front end mixes Material-UI 4 and MUI 5.
-- Generate demonstration data with a script, so the platform can be run and shown without any real data.
 
 ## Stack
 

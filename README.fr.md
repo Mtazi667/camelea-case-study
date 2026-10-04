@@ -6,7 +6,7 @@ Plateforme en production utilisée par un cabinet de neuropsychologie (Chalet Jo
 
 Rédiger un bilan neuropsychologique complet prenait plusieurs jours de cotation et de mise en forme manuelles. Il fallait convertir les scores avec les tables normatives des éditeurs, puis les recopier dans un document Word avec des tableaux et des graphiques pour chaque test. CAMELEA permet au cabinet d'enregistrer les patients, de saisir les résultats bruts des tests et d'obtenir la cotation immédiatement. La plateforme génère ensuite le bilan complet au format Word.
 
-![Bilan généré : profil des composites du WISC-V](images/07-report-wisc-composites.png)
+![Parcours : création d'un patient, saisie d'un test et génération du bilan](images/walkthrough.gif)
 
 ## Chronologie
 
@@ -67,33 +67,55 @@ La mise en page est en Python parce que python-docx et matplotlib donnent un con
 - Les libellés et descriptions viennent d'un fichier JSON qui contient une version française et une version anglaise de chaque texte. Un bilan est généré en français ou en anglais.
 - Deux versions : complète, et école. La version école garde six tests (WISC-V, WAIS-IV, KITAP, TAP, DTVP-3, DTVP-A-2), n'affiche que le tableau principal de chaque test et retire les annexes.
 
-## Captures d'écran
+## Fonctionnement
 
 Toutes les données affichées sont fictives. L'interface est en français.
 
-Liste des patients, avec le statut du bilan et les actions.
+1. La liste des patients affiche le statut de chaque dossier.
 
-![Liste des patients](images/01-patients.png)
+![Liste des patients](images/01-patient-list.png)
 
-Saisie des notes brutes du WISC-V, regroupées par indice.
+2. Un nouveau patient est créé avec les tests demandés pour le bilan.
 
-![Saisie WISC-V](images/03-wisc-input-form.png)
+![Formulaire Nouveau patient](images/02-new-patient.png)
 
-Gestion des examinateurs : clés d'activation, droits attribués, statut.
+3. Les notes brutes d'un test sont saisies dans un seul formulaire, regroupées par indice (ici le WISC-V).
 
-![Examinateurs](images/04-examiners.png)
+![Saisie WISC-V](images/03-wisc-entry.png)
 
-Journal d'activité d'un cabinet.
+4. Une fois tous les tests saisis, la fiche du patient indique chaque test comme complété.
 
-![Journal d'activité](images/05-activity-log.png)
+![Fiche du patient](images/04-patient-record.png)
 
-Bilan généré : profil des subtests du WISC-V et tableau des composites.
+5. Le bilan est généré en français ou en anglais, en version complète ou école.
 
-![Subtests WISC-V dans un bilan](images/06-report-wisc-subtests.png)
+![Génération du bilan](images/05-generate-report.png)
 
-Bilan généré : section DTVP-3.
+## Le bilan généré
 
-![DTVP-3 dans un bilan](images/08-report-dtvp3.png)
+L'en-tête « Cabinet Démo » est celui du mode démonstration.
+
+Profil des subtests et tableau des composites du WISC-V, bilan en français.
+
+![Profil WISC-V dans un bilan en français](images/report-fr-wisc-profile.png)
+
+Profil des composites et comparaison des indices du WISC-V, bilan en anglais.
+
+![Composites WISC-V dans un bilan en anglais](images/report-en-composites.png)
+
+Annexe de la BRIEF, formulaire enseignant : note brute, note T, rang percentile et intervalle de confiance pour chaque échelle, bilan en français.
+
+![Annexe BRIEF dans un bilan en français](images/report-fr-brief-annex.png)
+
+## Rôles et traçabilité
+
+Gestion des examinateurs : chaque examinateur a une clé d'activation et un ensemble de droits. Les clés d'activation sont floutées.
+
+![Examinateurs](images/examiners.png)
+
+Journal d'activité : détail d'une modification de test, avec la valeur avant et après.
+
+![Détail du journal d'activité](images/activity-log-detail.png)
 
 ## Extraits de code
 

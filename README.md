@@ -6,7 +6,7 @@ Production platform used by a neuropsychology practice (Chalet Jonas). Source co
 
 Writing a full neuropsychological report used to take several days of manual scoring and formatting. Scores had to be converted with the publishers' norm tables, then copied into a Word document with tables and charts for each test. CAMELEA lets the practice register patients, enter raw test results, and get scored results immediately. It then generates the complete report as a Word document.
 
-![Generated report: WISC-V composite profile](images/07-report-wisc-composites.png)
+![Walkthrough: creating a patient, entering a test and generating the report](images/walkthrough.gif)
 
 ## Timeline
 
@@ -67,33 +67,55 @@ Python was used for layout because python-docx and matplotlib give direct contro
 - All labels and descriptions come from one JSON file that holds a French and an English version of each text. A report is generated in French or in English.
 - Two versions: full, and school. The school version keeps six tests (WISC-V, WAIS-IV, KITAP, TAP, DTVP-3, DTVP-A-2), prints only the main table per test, and leaves out annexes.
 
-## Screenshots
+## How it works
 
 All data shown is fictional. The interface is in French.
 
-Patient list, with report status and actions.
+1. The patient list shows the status of each file.
 
-![Patient list](images/01-patients.png)
+![Patient list](images/01-patient-list.png)
 
-WISC-V raw score entry, grouped by index.
+2. A new patient is created with the tests requested for the assessment.
 
-![WISC-V entry form](images/03-wisc-input-form.png)
+![New patient form](images/02-new-patient.png)
 
-Examiner management: activation keys, assigned rights, status.
+3. The raw scores of a test are entered in one form, grouped by index (here the WISC-V).
 
-![Examiners](images/04-examiners.png)
+![WISC-V entry form](images/03-wisc-entry.png)
 
-Activity log for one practice.
+4. Once all tests are entered, the patient record shows each test as completed.
 
-![Activity log](images/05-activity-log.png)
+![Patient record](images/04-patient-record.png)
 
-Generated report: WISC-V subtest profile and composite table.
+5. The report is generated in French or in English, in the full or the school version.
 
-![WISC-V subtests in a report](images/06-report-wisc-subtests.png)
+![Report generation](images/05-generate-report.png)
 
-Generated report: DTVP-3 section.
+## The generated report
 
-![DTVP-3 in a report](images/08-report-dtvp3.png)
+The "Cabinet Démo" header ("Demo Practice" in English) is the one used in demonstration mode.
+
+WISC-V subtest profile and composite table, French report.
+
+![WISC-V profile in a French report](images/report-fr-wisc-profile.png)
+
+WISC-V composite profile and index comparisons, English report.
+
+![WISC-V composites in an English report](images/report-en-composites.png)
+
+BRIEF annex, teacher form: raw score, T score, percentile and confidence interval for each scale, French report.
+
+![BRIEF annex in a French report](images/report-fr-brief-annex.png)
+
+## Roles and audit
+
+Examiner management: each examiner has an activation key and a set of rights. Activation keys are blurred.
+
+![Examiners](images/examiners.png)
+
+Activity log: detail of a test update, with the value before and after.
+
+![Activity log detail](images/activity-log-detail.png)
 
 ## Code excerpts
 

@@ -4,6 +4,9 @@
 
 Plateforme en production utilisée par un cabinet de neuropsychologie (Chalet Jonas). Le code source est privé ; ce dépôt documente le projet.
 
+> [!NOTE]
+> Tous les patients, noms, résultats et bilans présentés dans ce dépôt sont fictifs. Ils ont été créés pour cette démonstration dans un compte de test. Aucune donnée réelle de patient n'est incluse.
+
 Rédiger un bilan neuropsychologique complet prenait plusieurs jours de cotation et de mise en forme manuelles. Il fallait convertir les scores avec les tables normatives des éditeurs, puis les recopier dans un document Word avec des tableaux et des graphiques pour chaque test. CAMELEA permet au cabinet d'enregistrer les patients, de saisir les résultats bruts des tests et d'obtenir la cotation immédiatement. La plateforme génère ensuite le bilan complet au format Word.
 
 ![Parcours : création d'un patient, saisie d'un test et génération du bilan](images/walkthrough.gif)

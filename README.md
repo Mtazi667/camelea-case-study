@@ -4,6 +4,9 @@
 
 Production platform used by a neuropsychology practice (Chalet Jonas). Source code is private; this repository documents the project.
 
+> [!NOTE]
+> All patients, names, scores and reports shown in this repository are fictional. They were created for this demonstration in a test account. No real patient data is included.
+
 Writing a full neuropsychological report used to take several days of manual scoring and formatting. Scores had to be converted with the publishers' norm tables, then copied into a Word document with tables and charts for each test. CAMELEA lets the practice register patients, enter raw test results, and get scored results immediately. It then generates the complete report as a Word document.
 
 ![Walkthrough: creating a patient, entering a test and generating the report](images/walkthrough.gif)
